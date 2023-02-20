@@ -70,6 +70,7 @@ class UnidadmedidaController extends Controller
         $model = new Unidadmedida();
 
         if ($this->request->isPost) {
+            $model->fechareg=new CDbExpression('NOW()');
             if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'idunidadmedida' => $model->idunidadmedida]);
             }

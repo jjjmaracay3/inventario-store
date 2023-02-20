@@ -10,7 +10,7 @@ use Yii;
  * @property int $idunidadmedida llave primaria de la unidad de medida
  * @property string $nombre Nombre de la unidad de media
  * @property int $idusuario id del usuario que realizo el registro
- * @property int $fecha Fecha de creacion del registro
+ * @property string $fechareg Fecha de creacion del registro
  */
 class Unidadmedida extends \yii\db\ActiveRecord
 {
@@ -28,8 +28,9 @@ class Unidadmedida extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idunidadmedida', 'nombre', 'idusuario', 'fecha'], 'required'],
-            [['idunidadmedida', 'idusuario', 'fecha'], 'integer'],
+            [['idunidadmedida', 'nombre', 'idusuario', 'fechareg'], 'required'],
+            [['idunidadmedida', 'idusuario'], 'integer'],
+            [['fechareg'], 'safe'],
             [['nombre'], 'string', 'max' => 50],
             [['idunidadmedida'], 'unique'],
         ];
@@ -44,7 +45,7 @@ class Unidadmedida extends \yii\db\ActiveRecord
             'idunidadmedida' => 'Idunidadmedida',
             'nombre' => 'Nombre',
             'idusuario' => 'Idusuario',
-            'fecha' => 'Fecha',
+            'fechareg' => 'Fechareg',
         ];
     }
 }

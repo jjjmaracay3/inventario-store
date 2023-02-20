@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'idusuario') ?>
 
-    <?= $form->field($model, 'fecha') ?>
+    <?= $form->field($model, 'fechareg') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

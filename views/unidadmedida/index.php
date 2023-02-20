@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\unidadmedidaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Unidadmedidas';
+$this->title = 'Unidad de Medidas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="unidadmedida-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Unidadmedida', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Registro', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'idunidadmedida',
             'nombre',
             'idusuario',
-            'fecha',
+            'fechareg',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Unidadmedida $model, $key, $index, $column) {
