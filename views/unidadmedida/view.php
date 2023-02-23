@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id_unidadmedida' => $model->id_unidadmedida], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id_unidadmedida' => $model->id_unidadmedida], [
+        <?= Html::a('Actualizar', ['update', 'id_unidadmedida' => $model->id_unidadmedida], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id_unidadmedida' => $model->id_unidadmedida], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Estás seguro de eliminar este registro?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,11 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_unidadmedida',
             'unidadmedida',
             'usuario',
             'fechareg',
-            'estatus:boolean',
+          
         ],
     ]) ?>
 
