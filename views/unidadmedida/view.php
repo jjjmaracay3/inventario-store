@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\models\Unidadmedida $model */
 
-$this->title = $model->idunidadmedida;
+$this->title = $model->id_unidadmedida;
 $this->params['breadcrumbs'][] = ['label' => 'Unidadmedidas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'idunidadmedida' => $model->idunidadmedida], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'idunidadmedida' => $model->idunidadmedida], [
+        <?= Html::a('Update', ['update', 'id_unidadmedida' => $model->id_unidadmedida], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id_unidadmedida' => $model->id_unidadmedida], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Está seguro de eliminar este registro?',
+                'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,10 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idunidadmedida',
-            'nombre',
-            'idusuario',
+            'id_unidadmedida',
+            'unidadmedida',
+            'usuario',
             'fechareg',
+            'estatus:boolean',
         ],
     ]) ?>
 

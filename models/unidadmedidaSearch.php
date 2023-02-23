@@ -17,8 +17,9 @@ class unidadmedidaSearch extends Unidadmedida
     public function rules()
     {
         return [
-            [['idunidadmedida', 'idusuario'], 'integer'],
-            [['nombre', 'fechareg'], 'safe'],
+            [['id_unidadmedida', 'usuario'], 'integer'],
+            [['unidadmedida', 'fechareg'], 'safe'],
+            [['estatus'], 'boolean'],
         ];
     }
 
@@ -58,12 +59,13 @@ class unidadmedidaSearch extends Unidadmedida
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'idunidadmedida' => $this->idunidadmedida,
-            'idusuario' => $this->idusuario,
+            'id_unidadmedida' => $this->id_unidadmedida,
+            'usuario' => $this->usuario,
             'fechareg' => $this->fechareg,
+            'estatus' => $this->estatus,
         ]);
 
-        $query->andFilterWhere(['like', 'nombre', $this->nombre]);
+        $query->andFilterWhere(['ilike', 'unidadmedida', $this->unidadmedida]);
 
         return $dataProvider;
     }

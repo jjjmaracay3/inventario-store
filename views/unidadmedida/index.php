@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\unidadmedidaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Unidad de Medidas';
+$this->title = 'Unidad de medidas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="unidadmedida-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Crear Registro', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear registro', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,14 +29,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'idunidadmedida',
-            'nombre',
-            'idusuario',
+            'id_unidadmedida',
+            'unidadmedida',
+            'usuario',
             'fechareg',
+            'estatus:boolean',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Unidadmedida $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'idunidadmedida' => $model->idunidadmedida]);
+                    return Url::toRoute([$action, 'id_unidadmedida' => $model->id_unidadmedida]);
                  }
             ],
         ],

@@ -7,10 +7,11 @@ use Yii;
 /**
  * This is the model class for table "unidadmedida".
  *
- * @property int $idunidadmedida llave primaria de la unidad de medida
- * @property string $nombre Nombre de la unidad de media
- * @property int $idusuario id del usuario que realizo el registro
- * @property string $fechareg Fecha de creacion del registro
+ * @property int $id_unidadmedida Id autoincremental que referencia a la unidad de medida
+ * @property string $unidadmedida Nombre o descriptivo de la unidad de medida
+ * @property int $usuario Usuario que modifico el registro
+ * @property string $fechareg Fecha y hora de Creación del registro
+ * @property bool $estatus Estatus habilitado true o desabilitado False
  */
 class Unidadmedida extends \yii\db\ActiveRecord
 {
@@ -28,11 +29,13 @@ class Unidadmedida extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idunidadmedida', 'nombre', 'idusuario', 'fechareg'], 'required'],
-            [['idunidadmedida', 'idusuario'], 'integer'],
+            [['unidadmedida', 'usuario', 'fechareg'], 'required'],
+            [['usuario'], 'default', 'value' => null],
+            [['usuario'], 'integer'],
             [['fechareg'], 'safe'],
-            [['nombre'], 'string', 'max' => 50],
-            [['idunidadmedida'], 'unique'],
+            [['estatus'], 'boolean'],
+            [['unidadmedida'], 'string', 'max' => 50],
+            [['unidadmedida'], 'unique'],
         ];
     }
 
@@ -42,10 +45,11 @@ class Unidadmedida extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idunidadmedida' => 'Idunidadmedida',
-            'nombre' => 'Nombre',
-            'idusuario' => 'Idusuario',
+            'id_unidadmedida' => 'Id Unidadmedida',
+            'unidadmedida' => 'Unidadmedida',
+            'usuario' => 'Usuario',
             'fechareg' => 'Fechareg',
+            'estatus' => 'Estatus',
         ];
     }
 }

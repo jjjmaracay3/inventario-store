@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Unidadmedida $model */
 
-$this->title = 'Actualizar Unidad de medida: ' . $model->idunidadmedida;
+$this->title = 'Actualizar Unidad de medida: ' . $model->id_unidadmedida;
 $this->params['breadcrumbs'][] = ['label' => 'Unidadmedidas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->idunidadmedida, 'url' => ['view', 'idunidadmedida' => $model->idunidadmedida]];
+$this->params['breadcrumbs'][] = ['label' => $model->id_unidadmedida, 'url' => ['view', 'id_unidadmedida' => $model->id_unidadmedida]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="unidadmedida-update">

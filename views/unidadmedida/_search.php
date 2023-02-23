@@ -15,13 +15,15 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'idunidadmedida') ?>
+    <?= $form->field($model, 'id_unidadmedida') ?>
 
-    <?= $form->field($model, 'nombre') ?>
+    <?= $form->field($model, 'unidadmedida') ?>
 
-    <?= $form->field($model, 'idusuario') ?>
+    <?= $form->field($model, 'usuario') ?>
 
     <?= $form->field($model, 'fechareg') ?>
+
+    <?= $form->field($model, 'estatus')->checkbox() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

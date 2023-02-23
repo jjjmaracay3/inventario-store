@@ -12,16 +12,16 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'idunidadmedida')->textInput() ?>
+    <?= $form->field($model, 'unidadmedida')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'idusuario')->textInput() ?>
+  <!--  <?= $form->field($model, 'usuario')->textInput() ?>
 
     <?= $form->field($model, 'fechareg')->textInput() ?>
 
+    <?= $form->field($model, 'estatus')->checkbox() ?>-->
+
     <div class="form-group">
-        <?= Html::submitButton('Guardar registro', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
