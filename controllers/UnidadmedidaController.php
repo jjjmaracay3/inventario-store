@@ -40,6 +40,7 @@ class UnidadmedidaController extends Controller
     {
         $searchModel = new unidadmedidaSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider->query->where('estatus = true'); //Mostrar solo los registros activos
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -89,12 +90,13 @@ class UnidadmedidaController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
+              /*Valores que no se registran por formulario pero que se deben guardar en BD en conjunto con los del formulario*/
               $_POST['Unidadmedida']['usuario']=(int)1;
               $_POST['Unidadmedida']['fechareg']= date("Y-m-d H:i:s");
               $_POST['Unidadmedida']['status']=true;
               $model->attributes=$_POST['Unidadmedida'];
-               if ($model->save()) {
-                    return $this->redirect(['view', 'id_unidadmedida' => $model->id_unidadmedida]);
+               if ($model->save()) { //Guardar
+                    return $this->redirect(['view', 'id_unidadmedida' => $model->id_unidadmedida]); //Direccionar a la vista view
                }
 
             }
@@ -115,7 +117,7 @@ class UnidadmedidaController extends Controller
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id_unidadmedida)
+    /*public function actionUpdate($id_unidadmedida)
     {
         $model = $this->findModel($id_unidadmedida);
 
@@ -126,7 +128,33 @@ class UnidadmedidaController extends Controller
         return $this->render('update', [
             'model' => $model,
         ]);
+    }*/
+    public function actionUpdate($id_unidadmedida)
+    {
+        $model = $this->findModel($id_unidadmedida);
+
+
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post())) {
+              /*Valores que no se registran por formulario pero que se deben guardar en BD en conjunto con los del formulario*/
+              $_POST['Unidadmedida']['usuario']=(int)1;
+              $_POST['Unidadmedida']['fechareg']= date("Y-m-d H:i:s");
+              $_POST['Unidadmedida']['status']=true;
+              $model->attributes=$_POST['Unidadmedida'];
+               if ($model->save()) { //Guardar
+                    return $this->redirect(['view', 'id_unidadmedida' => $model->id_unidadmedida]); //Direccionar a la vista view
+               }
+
+            }
+        } else {
+            $model->loadDefaultValues();
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
     }
+
 
     /**
      * Deletes an existing Unidadmedida model.
@@ -135,12 +163,27 @@ class UnidadmedidaController extends Controller
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id_unidadmedida)
+    /*public function actionDelete($id_unidadmedida)
     {
         $this->findModel($id_unidadmedida)->delete();
 
         return $this->redirect(['index']);
-    }
+    }*/
+
+
+  /*  public function actionDelete($id_unidadmedida)
+    {
+
+      $models=new ModeloB;
+      $model = $this->findModel($id_unidadmedida);
+
+
+      $model->save()
+
+        return $this->redirect(['index']);
+    }*/
+
+
 
     /**
      * Finds the Unidadmedida model based on its primary key value.
