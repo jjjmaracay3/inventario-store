@@ -17,7 +17,7 @@ class unidadmedidaSearch extends Unidadmedida
     public function rules()
     {
         return [
-            [['id_unidadmedida', 'usuario'], 'integer'],
+            [['id_unidadmedida', 'id_usuario'], 'integer'],
             [['unidadmedida', 'fechareg'], 'safe'],
             [['estatus'], 'boolean'],
         ];
@@ -60,7 +60,7 @@ class unidadmedidaSearch extends Unidadmedida
         // grid filtering conditions
         $query->andFilterWhere([
             'id_unidadmedida' => $this->id_unidadmedida,
-            'usuario' => $this->usuario,
+            'id_usuario' => $this->id_usuario,
             'fechareg' => $this->fechareg,
             'estatus' => $this->estatus,
         ]);

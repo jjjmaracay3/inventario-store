@@ -9,7 +9,7 @@ use Yii;
  *
  * @property int $id_unidadmedida Id autoincremental que referencia a la unidad de medida
  * @property string $unidadmedida Nombre o descriptivo de la unidad de medida
- * @property int $usuario Usuario que modifico el registro
+ * @property int $id_usuario Usuario que modifico el registro
  * @property string $fechareg Fecha y hora de Creación del registro
  * @property bool $estatus Estatus habilitado true o desabilitado False
  */
@@ -29,9 +29,9 @@ class Unidadmedida extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['unidadmedida', 'usuario', 'fechareg'], 'required'],
-            [['usuario'], 'default', 'value' => null],
-            [['usuario'], 'integer'],
+            [['unidadmedida', 'id_usuario', 'fechareg'], 'required'],
+            [['id_usuario'], 'default', 'value' => null],
+            [['id_usuario'], 'integer'],
             [['fechareg'], 'safe'],
             [['estatus'], 'boolean'],
             [['unidadmedida'], 'string', 'max' => 50],
@@ -47,7 +47,7 @@ class Unidadmedida extends \yii\db\ActiveRecord
         return [
             'id_unidadmedida' => 'Id Unidadmedida',
             'unidadmedida' => 'Unidadmedida',
-            'usuario' => 'Usuario',
+            'id_usuario' => 'Usuario',
             'fechareg' => 'Fechareg',
             'estatus' => 'Estatus',
         ];

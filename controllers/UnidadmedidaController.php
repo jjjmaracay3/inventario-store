@@ -16,20 +16,27 @@ class UnidadmedidaController extends Controller
     /**
      * @inheritDoc
      */
-    public function behaviors()
-    {
-        return array_merge(
-            parent::behaviors(),
-            [
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
-                    ],
-                ],
-            ]
-        );
-    }
+     public function behaviors()
+       {
+           /*return array_merge(
+               parent::behaviors(),
+               [
+
+                   'verbs' => [
+                       'class' => VerbFilter::className(),
+                       'actions' => [
+                           'delete' => ['POST'],
+                       ],
+                   ],
+               ]
+           );*/
+
+        return [
+          'ghost-access'=> [
+              'class' => 'webvimark\modules\UserManagement\components\GhostAccessControl',
+            ],
+        ];
+       }
 
     /**
      * Lists all Unidadmedida models.
@@ -91,8 +98,8 @@ class UnidadmedidaController extends Controller
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
               /*Valores que no se registran por formulario pero que se deben guardar en BD en conjunto con los del formulario*/
-              $_POST['Unidadmedida']['usuario']=(int)1;
-              $_POST['Unidadmedida']['fechareg']= date("Y-m-d H:i:s");
+              $_POST['Unidadmedida']['id_usuario']=(int)1;
+              $_POST['Unidadmedida']['id_fechareg']= date("Y-m-d H:i:s");
               $_POST['Unidadmedida']['status']=true;
               $model->attributes=$_POST['Unidadmedida'];
                if ($model->save()) { //Guardar
