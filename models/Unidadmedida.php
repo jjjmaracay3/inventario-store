@@ -47,7 +47,7 @@ class Unidadmedida extends \yii\db\ActiveRecord
         return [
             'id_unidadmedida' => 'Id Unidadmedida',
             'unidadmedida' => 'Unidadmedida',
-            'id_usuario' => 'Usuario',
+            'id_usuario' => 'id_usuario',
             'fechareg' => 'Fechareg',
             'estatus' => 'Estatus',
         ];

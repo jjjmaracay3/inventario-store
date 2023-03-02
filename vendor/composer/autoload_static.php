@@ -36,6 +36,17 @@ class ComposerStaticInitf6a05346a7cf5c6b6f7d8314087744f8
             'yii\\bootstrap5\\' => 15,
             'yii\\' => 4,
         ),
+        'w' => 
+        array (
+            'webvimark\\modules\\UserManagement\\' => 33,
+            'webvimark\\image\\' => 16,
+            'webvimark\\helpers\\' => 18,
+            'webvimark\\extensions\\GridPageSize\\' => 34,
+            'webvimark\\extensions\\GridBulkActions\\' => 37,
+            'webvimark\\extensions\\DateRangePicker\\' => 37,
+            'webvimark\\extensions\\BootstrapSwitch\\' => 37,
+            'webvimark\\components\\' => 21,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
@@ -127,6 +138,38 @@ class ComposerStaticInitf6a05346a7cf5c6b6f7d8314087744f8
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'webvimark\\modules\\UserManagement\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/module-user-management',
+        ),
+        'webvimark\\image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/image',
+        ),
+        'webvimark\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/helpers',
+        ),
+        'webvimark\\extensions\\GridPageSize\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/grid-page-size',
+        ),
+        'webvimark\\extensions\\GridBulkActions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/grid-bulk-actions',
+        ),
+        'webvimark\\extensions\\DateRangePicker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/date-range-picker',
+        ),
+        'webvimark\\extensions\\BootstrapSwitch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/bootstrap-switch',
+        ),
+        'webvimark\\components\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webvimark/components',
+        ),
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
@@ -217,8 +260,8 @@ class ComposerStaticInitf6a05346a7cf5c6b6f7d8314087744f8
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (
@@ -270,13 +313,20 @@ class ComposerStaticInitf6a05346a7cf5c6b6f7d8314087744f8
         ),
         'Codeception\\' => 
         array (
-            0 => __DIR__ . '/..' . '/codeception/stub/src',
-            1 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+            0 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+            1 => __DIR__ . '/..' . '/codeception/stub/src',
             2 => __DIR__ . '/..' . '/codeception/verify/src/Codeception',
         ),
     );
 
     public static $prefixesPsr0 = array (
+        'I' => 
+        array (
+            'Ikimea\\Browser\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/ikimea/browser/lib',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 

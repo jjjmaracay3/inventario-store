@@ -13,6 +13,6 @@ http://jquery-manual.blogspot.com/2015/02/yii-framework-2-user-registro-de.html
 */
 return[
 'adminEmail' => 'concienciaenplenitud@gmail.com',
-'title' => 'Aplicación Yii',
+'title' => 'La gloria de Dios',
 'salt' => 'fsddsflj38343lj0',
 ];
