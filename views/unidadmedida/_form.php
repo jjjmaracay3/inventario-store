@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'unidadmedida')->textInput(['maxlength' => true]) ?>
 
-  <!--  <?= $form->field($model, 'usuario')->textInput() ?>
+  <!--  <?= $form->field($model, 'id_usuario')->textInput() ?>
 
     <?= $form->field($model, 'fechareg')->textInput() ?>
 
