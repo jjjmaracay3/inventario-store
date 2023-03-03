@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var app\models\Unidadmedida $model */
+/** @var app\models\Categorias $model */
 
-$this->title = 'Unidad de medida';
-$this->params['breadcrumbs'][] = ['label' => 'Crear unidad de medida', 'url' => ['index']];
+$this->title = 'Crear Categorias';
+$this->params['breadcrumbs'][] = ['label' => 'Categorias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="unidadmedida-create">
+<div class="categorias-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

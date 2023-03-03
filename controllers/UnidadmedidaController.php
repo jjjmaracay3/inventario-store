@@ -99,7 +99,7 @@ class UnidadmedidaController extends Controller
             if ($model->load($this->request->post())) {
               /*Valores que no se registran por formulario pero que se deben guardar en BD en conjunto con los del formulario*/
               $_POST['Unidadmedida']['id_usuario']=(int)1;
-              $_POST['Unidadmedida']['id_fechareg']= date("Y-m-d H:i:s");
+              $_POST['Unidadmedida']['fechareg']= date("Y-m-d H:i:s");
               $_POST['Unidadmedida']['status']=true;
               $model->attributes=$_POST['Unidadmedida'];
                if ($model->save()) { //Guardar
