@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Categorias;
 
 /** @var yii\web\View $this */
 /** @var app\models\Subcategorias $model */
@@ -12,7 +14,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_categoria')->textInput() ?>
+    <!-- <?= $form->field($model, 'id_categoria')->textInput() ?> -->
+
+    <?= $form->field($model, 'id_categoria')->dropDownList(
+        ArrayHelper::map(Categorias::find(array('condition'=>"estatus = true",'order' => 'name desc'))->all(), 'id_categoria', 'nombre'),['prompt' => 'Seleccione...' ]
+    ) ?>
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
