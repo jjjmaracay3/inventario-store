@@ -44,9 +44,36 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Políticas', 'url' => ['/site/about']],
-            ['label' => 'Contacto', 'url' => ['/site/contact']],
-            ['label' => 'Unidad de medida', 'url' => ['/unidadmedida/index']],
+
+            [
+              'label' => 'Organización',
+              'items'=>[
+                ['label'=>'Empresa', 'url'=>['/empresas/index']],
+                ['label' => 'Políticas', 'url' => ['/site/about']],
+                ['label' => 'Contacto', 'url' => ['/site/contact']],
+
+              ],
+            ],
+            [
+              'label' => 'Carga',
+              'items'=>[
+                ['label'=>'Unidad de medida', 'url'=>['/unidadmedida/index']],
+                ['label'=>'Categorias', 'url'=>['/categorias/index']],
+                ['label'=>'Subcategorias', 'url'=>['/subcategorias/index']],
+                ['label'=>'Productos', 'url'=>['/productos/index']],
+
+              ],
+            ],
+            [
+              'label' => 'Inventario',
+              'items'=>[
+                ['label'=>'Inicial', 'url'=>['/unidadmedida/index']],
+                ['label'=>'Entradas', 'url'=>['/unidadmedida/index']],
+                ['label'=>'Salidas', 'url'=>['/categorias/index']],
+                ['label'=>'Cierre de mes', 'url'=>['/unidadmedida/index']],
+
+              ],
+            ],
             /*Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
@@ -58,11 +85,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     . Html::endForm()
                     . '</li>'*/
             [
-            	'label' => 'Backend routes',
+            	'label' => 'Usuarios',
             	'items'=>UserManagementModule::menuItems()
             ],
             [
-            	'label' => 'Frontend routes',
+            	'label' => 'Password',
             	'items'=>[
             		['label'=>'Login', 'url'=>['/user-management/auth/login']],
             		['label'=>'Logout', 'url'=>['/user-management/auth/logout']],
